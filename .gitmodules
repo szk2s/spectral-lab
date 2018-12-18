@@ -1,0 +1,3 @@
+[submodule "lib/spectrum2mpe"]
+	path = lib/spectrum2mpe
+	url = https://github.com/szk2s/spectrum2mpe
