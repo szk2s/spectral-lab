@@ -1,0 +1,29 @@
+{
+  "name": "spectral-mpe-editor",
+  "version": "1.0.0",
+  "description": "Electron app for generating and editing MIDI files which is compatible with MPE applications.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szk2s/spectral-mpe-editor.git"
+  },
+  "keywords": [
+    "electron",
+    "spectral",
+    "mpe",
+    "spectrum",
+    "midi"
+  ],
+  "author": "szk2s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szk2s/spectral-mpe-editor/issues"
+  },
+  "homepage": "https://github.com/szk2s/spectral-mpe-editor#readme",
+  "dependencies": {
+    "electron": "^3.0.13"
+  }
+}
