@@ -25,5 +25,8 @@
   "homepage": "https://github.com/szk2s/spectral-mpe-editor#readme",
   "dependencies": {
     "electron": "^3.0.13"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0"
   }
 }
