@@ -1,44 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# spectral-mpe-editor
 
-## Available Scripts
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-In the project directory, you can run:
+> Electron app for generating and editing MIDI files which is compatible with MPE applications.
 
-### `npm start`
+TODO: Fill out this long description.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [spectral-mpe-editor](#spectral-mpe-editor)
+  - [Table of Contents](#table-of-contents)
+  - [Install](#install)
+  - [Development](#development)
+  - [Maintainers](#maintainers)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-### `npm test`
+## Install
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone or download zip 
 
-### `npm run build`
+Then install dependencies
+```
+npm i
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+npm run electron-dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then execute the following from the Console tab of your running Electron app's developer tools:
+```
+require('electron-react-devtools').install()
+```
+And than refresh or restart the renderer process, you can see a React tab added.
 
-### `npm run eject`
+## Maintainers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[@szk2s](https://github.com/szk2s)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+PRs welcome.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT © 2018 Satoshi Suzuki
