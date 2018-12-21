@@ -14,11 +14,10 @@
         "args" : ["."]
       },
       {
-        "name": "Debug S2M",
+        "name": "Debug S2M example",
         "type": "node",
         "request": "launch",
-        "program": "${workspaceFolder}/lib/spectrum2mpe/test/test.js"
-    }
-    
+        "program": "${workspaceFolder}/lib/spectrum2mpe/examples/convert.js"
+      }
     ]
 }
