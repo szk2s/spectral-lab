@@ -25,6 +25,22 @@ Then install dependencies
 npm i
 ```
 
+Then switch submodule's branch 
+
+```
+cd ./src/spectrum2mpe
+git branch function-library
+```
+
+Then install submodule's dependency.
+```
+npm i
+```
+back to root directory.
+```
+cd ../..
+```
+
 ## Development
 
 ```

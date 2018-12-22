@@ -6,7 +6,8 @@
     "electron-is-dev": "^1.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "spectrum2mpe": "https://github.com/szk2s/spectrum2mpe#function-library"
   },
   "main": "public/electron.js",
   "scripts": {
