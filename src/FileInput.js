@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s2m from 'spectrum2mpe';
 
 class FileInput extends React.Component {

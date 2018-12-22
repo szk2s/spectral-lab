@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import FileInput from './FileInput';
 
 class App extends Component {
@@ -11,7 +10,6 @@ class App extends Component {
 		songInfo:{}
 	}
 	render() {
-		const fs = require('fs');
 		return (
 			<div className="App">
 				<FileInput />
