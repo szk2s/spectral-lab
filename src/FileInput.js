@@ -5,14 +5,14 @@ class FileInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.fileInput = React.createRef();
-	}
 
-	handleChange = async (event) => {
-		event.preventDefault();
-		const newPartials = await s2m.txtImport(this.fileInput.current.files[0].path);
-		this.props.addPartials(newPartials)
+		this.handleChange = async (event) => {
+			event.preventDefault();
+			const newPartials = await s2m.txtImport(this.fileInput.current.files[0].path);
+			this.props.addPartials(newPartials);
+		};
 	}
-
+	
 	render() {
 		return (
 			<label>

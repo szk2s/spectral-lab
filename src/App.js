@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FileInput from './FileInput';
 
-class App extends Component {
-	state = {
-		partials: [],
-		melodies: [],
-		smfs:[],
-		config:{},
-		songInfo:{}
-	}
+class App extends React.Component {
+	constructor(props) {
+		super(props);
 
-	addPartials = (newPartials) => {	
-		const _partials = [...this.state.partials, ...newPartials];
-		this.setState({
-			partials: _partials
-		})
+		this.state = {
+			partials: [],
+			melodies: [],
+			smfs:[],
+			config:{},
+			songInfo:{}
+		};
+
+		this.addPartials = (newPartials) => {	
+			this.setState({
+				partials: [...this.state.partials, ...newPartials]
+			});
+		};
 	}
+	
 	render() {
 		return (
 			<div className="App">
