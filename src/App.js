@@ -8,11 +8,10 @@ class App extends Component {
 		smfs:[],
 		config:{},
 		songInfo:{}
-
 	}
 
-	addPartials(newPartials) {	
-		const _partials = [...this.partials, ...newPartials];
+	addPartials = (newPartials) => {	
+		const _partials = [...this.state.partials, ...newPartials];
 		this.setState({
 			partials: _partials
 		})
