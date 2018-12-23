@@ -7,22 +7,18 @@ class FileInput extends React.Component {
 		this.fileInput = React.createRef();
 	}
 
-	handleSubmit = async (event) => {
+	handleChange = async (event) => {
 		event.preventDefault();
-		const partials = await s2m.txtImport(this.fileInput.current.files[0].path);
-		console.log(partials);
+		const newPartials = await s2m.txtImport(this.fileInput.current.files[0].path);
+		this.props.addPartials(newPartials)
 	}
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label>
-				Choose text file:
-					<input type="file" ref={this.fileInput} />
-				</label>
-				<br />
-				<button type="submit">Start</button>
-			</form>
+			<label>
+			Choose text file:
+				<input type="file" ref={this.fileInput} onChange={ this.handleChange }/>
+			</label>
 		);
 	}
 }

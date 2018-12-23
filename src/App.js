@@ -8,11 +8,19 @@ class App extends Component {
 		smfs:[],
 		config:{},
 		songInfo:{}
+
+	}
+
+	addPartials(newPartials) {	
+		const _partials = [...this.partials, ...newPartials];
+		this.setState({
+			partials: _partials
+		})
 	}
 	render() {
 		return (
 			<div className="App">
-				<FileInput />
+				<FileInput addPartials={ this.addPartials } />
 			</div>
 		);
 	}
