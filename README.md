@@ -11,6 +11,7 @@ TODO: Fill out this long description.
 - [spectral-mpe-editor](#spectral-mpe-editor)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
+  - [Usage](#usage)
   - [Development](#development)
   - [Maintainers](#maintainers)
   - [Contributing](#contributing)
@@ -25,29 +26,16 @@ Then install dependencies
 npm i
 ```
 
-Then switch submodule's branch 
+## Usage
 
 ```
-cd ./src/spectrum2mpe
-git branch function-library
+npm start
 ```
 
-Then install submodule's dependency.
-```
-npm i
-```
-back to root directory.
-```
-cd ../..
-```
+## Development  
+Then install electron-react-devtools.  
+Execute the following from the Console tab of your running Electron app's developer tools:  
 
-## Development
-
-```
-npm run electron-dev
-```
-
-Then execute the following from the Console tab of your running Electron app's developer tools:
 ```
 require('electron-react-devtools').install()
 ```
