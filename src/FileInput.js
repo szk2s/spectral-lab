@@ -10,15 +10,19 @@ class FileInput extends React.Component {
 			event.preventDefault();
 			const newPartials = await s2m.txtImport(this.fileInput.current.files[0].path);
 			this.props.addPartials(newPartials);
+			console.log('Your file has been successfully imported!');
 		};
 	}
 	
 	render() {
 		return (
-			<label>
-			Choose text file:
-				<input type="file" ref={this.fileInput} onChange={ this.handleChange }/>
-			</label>
+			<p>
+				<label>
+					Choose text file:
+					<input type="file" ref={this.fileInput} onChange={ this.handleChange }/>
+				</label>
+			</p>
+			
 		);
 	}
 }
