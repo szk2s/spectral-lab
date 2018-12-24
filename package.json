@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.23.0",
+    "plotly.js": "^1.43.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-plotly.js": "^2.2.0",
     "spectrum2mpe": "https://github.com/szk2s/spectrum2mpe#function-library"
   },
   "main": "public/electron.js",
