@@ -3,6 +3,7 @@ const app = electron.app;
 const globalShortcut = electron.globalShortcut
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
+global.ProgressBar = require('electron-progressbar');
 
 let mainWindow;
 

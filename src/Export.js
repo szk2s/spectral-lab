@@ -3,9 +3,10 @@ import s2m from 'spectrum2mpe';
 import moment from 'moment';
 import path from 'path';
 import { remote } from 'electron';
-const { dialog } = remote;
+const { dialog , getGlobal } = remote;
+const ProgressBar = getGlobal('ProgressBar');
 
-const Export = ({ partials, destination, mergeConfig }) => {
+const Export = ({ partials, destination, mergeConfig ,songInfo}) => {
 	const changeDestination = () => {
 		let paths = dialog.showOpenDialog({
 			properties: ['openDirectory', 'createDirectory']
@@ -17,30 +18,51 @@ const Export = ({ partials, destination, mergeConfig }) => {
 	};
 	
 	const exportSMFs = async (partials) => {
+		if ( !partials || partials.length < 1 ){
+			console.log('No partials to export');
+			return;
+		}
+
+		const progressBar = new ProgressBar({
+			text: 'Exporting data...',
+			detail: 'Wait...'
+		});
+
 		const melodies = await s2m.partials2melodies(partials);
 		const smfs = await s2m.genSMFs(melodies, 'test-song');
-		await s2m.smfsBatchExport(
-			smfs, 
-			'large_bowl', 
-			destination, 
-			{
-				makeOutputFolder: true,
-				outputFolderName: moment(new Date()).format('YYMMDD')
-			}
-		);
-		console.log('Completed!');
+		if (smfs.length > 1){
+			await s2m.smfsBatchExport(
+				smfs, 
+				songInfo.songName, 
+				destination, 
+				{
+					makeOutputFolder: true,
+					outputFolderName: moment(new Date()).format('YYMMDD')
+				}
+			);
+		} else if (smfs.length === 1 ) {
+			await s2m.smfsBatchExport(
+				smfs, 
+				songInfo.songName, 
+				destination, 
+				{
+					makeOutputFolder: false,
+				}
+			);
+		} 
+
+		progressBar.setCompleted();
+		dialog.showMessageBox({message: 'Export Completed!'});
 	};
 
 	return (
-		<div className="export">
+		<div className='export'>
 			<h3>Export</h3>
-			<div className="path-selector">
-				<p>Path</p>
-				<p className="path">
-					{ path.resolve(destination) } 
-					<button onClick={ changeDestination }>Change</button>
-				</p>
-			</div>
+			<p>Path</p>
+			<p className='path-display'>
+				{ path.resolve(destination) } 
+				<button onClick={ changeDestination }>Change</button>
+			</p>
 			<button onClick={ () => { exportSMFs(partials); } }>Export</button>
 		</div>
 	);

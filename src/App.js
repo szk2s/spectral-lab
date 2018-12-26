@@ -36,6 +36,7 @@ class App extends React.Component {
 					layout: _layout
 				}
 			});
+
 		};
 
 		this.mergeConfig = (newConfig) => {
@@ -57,6 +58,7 @@ class App extends React.Component {
 					partials={this.state.partials } 
 					destination={ this.state.config.output.destination} 
 					mergeConfig={ this.mergeConfig } 
+					songInfo={ this.state.songInfo }
 				/>
 			</div>
 		);
