@@ -31,7 +31,9 @@ const PlotButtons = ({ partials, setPlot }) => {
 
 	return (
 		<div className="plotButtons">
-			<button id="plotPartialsButton" onClick={ () => { setPlot(partialsPlotData, layout); } }>Plot Partials</button>
+			<p>
+				<button onClick={ () => { setPlot(partialsPlotData, layout); } }>Plot Partials</button>
+			</p>
 		</div>
 	);
 };
