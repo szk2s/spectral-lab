@@ -1,6 +1,18 @@
 body {
-  text-align: center;
+  margin: 2% 4%;
   font-family: Helvetica;
   background-color: #333333;
-  color:aliceblue;
+  color:WhiteSmoke;
+}
+.export　{
+  background-color:DimGray;
+  color: WhiteSmoke;
+}
+.path　{
+  background-color: WhiteSmoke;
+  color: black;
+}
+
+a {
+  text-decoration: underline;
 }

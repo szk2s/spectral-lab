@@ -1,8 +1,9 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import _ from 'lodash';
 import FileInput from './FileInput';
 import PlotButtons from './PlotButtons';
-import ExportButton from './ExportButton';
+import Export from './Export';
 import INITIAL_STATE from '../constants/INITIAL_STATE';
 
 class App extends React.Component {
@@ -11,9 +12,15 @@ class App extends React.Component {
 
 		this.state = {
 			partials: [],
-			config: {},
-			songInfo: {},
+			config: { output: {destination : './output'}},
+			songInfo: {songName: '', inputFilePath: ''},
 			plot: INITIAL_STATE.PLOT
+		};
+
+		this.setSongInfo = (_songInfo) => {
+			this.setState({
+				songInfo: _songInfo
+			});
 		};
 
 		this.addPartials = (newPartials) => {	
@@ -30,17 +37,27 @@ class App extends React.Component {
 				}
 			});
 		};
+
+		this.mergeConfig = (newConfig) => {
+			this.setState({
+				config: _.merge(this.state.config, newConfig)
+			});
+		};
 	}
 	
 	render() {
 		return (
 			<div className="App">
-				<FileInput addPartials={ this.addPartials } />
+				<FileInput addPartials={ this.addPartials } setSongInfo={ this.setSongInfo } songInfo={ this.state.songInfo } />
 				<PlotButtons partials= {this.state.partials } setPlot={ this.setPlot } />
 				<Plot
 					data={ this.state.plot.data } layout={ this.state.plot.layout }
 				/>
-				<ExportButton partials= {this.state.partials } />
+				<Export 
+					partials={this.state.partials } 
+					destination={ this.state.config.output.destination} 
+					mergeConfig={ this.mergeConfig } 
+				/>
 			</div>
 		);
 	}
