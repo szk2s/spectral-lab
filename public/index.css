@@ -4,15 +4,28 @@ body {
   background-color: #333333;
   color:WhiteSmoke;
 }
-.export　{
-  background-color:DimGray;
-  color: WhiteSmoke;
-}
-.path　{
-  background-color: WhiteSmoke;
-  color: black;
-}
 
 a {
   text-decoration: underline;
+}
+
+.song-name {
+  font-size: 15pt;
+}
+
+.inputDirName {
+  white-space: nowrap;
+  font-size: 9pt;
+}
+
+.path-display {
+  text-align: center;
+  background-color: WhiteSmoke;
+  color: #333333;
+  font-Size: 10pt;
+}
+
+.export　{
+  background-color:DimGray !important;
+  color: WhiteSmoke !important;
 }

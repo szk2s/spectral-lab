@@ -36,7 +36,6 @@ class App extends React.Component {
 					layout: _layout
 				}
 			});
-
 		};
 
 		this.mergeConfig = (newConfig) => {
