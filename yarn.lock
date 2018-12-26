@@ -4135,7 +4135,7 @@ path-exists@^3.0.0:
 
 path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
+  resolved "http://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
 
 path-parse@^1.0.5, path-parse@^1.0.6:
   version "1.0.6"
@@ -5119,7 +5119,7 @@ spdx-license-ids@^3.0.0:
 
 "spectrum2mpe@https://github.com/szk2s/spectrum2mpe":
   version "0.0.1"
-  resolved "https://github.com/szk2s/spectrum2mpe#ae366b3b6a01a5ee2ed8424aea4a607528b984df"
+  resolved "https://github.com/szk2s/spectrum2mpe#1511a24213dc23980358acb4c75e7387d14f197f"
   dependencies:
     chai "^4.2.0"
     glob "^7.1.3"
