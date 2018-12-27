@@ -9,6 +9,7 @@ export default {
 		},
 	], 
 	layout: {
+		autosize: true,
 		xaxis: {
 			title: 'Time'
 		},
@@ -18,5 +19,5 @@ export default {
 		zaxis: {
 			title: 'Amplitude'
 		}
-	} 
+	}
 };
