@@ -29,12 +29,9 @@ class App extends React.Component {
 			});
 		};
 
-		this.setPlot = (_data, _layout) => {
+		this.setPlot = ( newPlot ) => {
 			this.setState({
-				plot: {
-					data: _data,
-					layout: _layout
-				}
+				plot: newPlot
 			});
 		};
 
@@ -53,17 +50,30 @@ class App extends React.Component {
 	
 	render() {
 		return (
-			<div className="App">
-				<FileInput addPartials={ this.addPartials } setSongInfo={ this.setSongInfo } songInfo={ this.state.songInfo } resetPlot={ this.resetPlot } />
-				<PlotButtons partials= {this.state.partials } setPlot={ this.setPlot } />
+			<div className='App'>
+				<FileInput 
+					addPartials={ this.addPartials } 
+					setSongInfo={ this.setSongInfo } 
+					songInfo={ this.state.songInfo } 
+					resetPlot={ this.resetPlot } 
+				/>
+				<PlotButtons 
+					partials= {this.state.partials } 
+					setPlot={ this.setPlot } 
+				/>
 				<Plot
-					data={ this.state.plot.data } layout={ this.state.plot.layout }
+					className='Plot'
+					data={ this.state.plot.data } 
+					layout={ this.state.plot.layout } 
+					config={ this.state.plot.config } 
+					useResizeHandler= { true } 
+					style={ { width: "100%", height: "100%" } } 
 				/>
 				<Export 
 					partials={this.state.partials } 
 					destination={ this.state.config.output.destination} 
 					mergeConfig={ this.mergeConfig } 
-					songInfo={ this.state.songInfo }
+					songInfo={ this.state.songInfo } 
 				/>
 			</div>
 		);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PlotButtons = ({ partials, setPlot }) => {
-	const partialsPlotData = partials.map(partial => {
+	const data = partials.map(partial => {
 		return {
 			type: 'scatter3d',
 			mode: 'lines',
@@ -17,6 +17,7 @@ const PlotButtons = ({ partials, setPlot }) => {
 	});
 
 	const layout = {
+		autosize: true,
 		xaxis: {
 			title: 'Time'
 		},
@@ -32,7 +33,7 @@ const PlotButtons = ({ partials, setPlot }) => {
 	return (
 		<div className="plotButtons">
 			<p>
-				<button onClick={ () => { setPlot(partialsPlotData, layout); } }>Make Graph</button>
+				<button onClick={ () => { setPlot( { data, layout } ); } }>Make Graph</button>
 			</p>
 		</div>
 	);
