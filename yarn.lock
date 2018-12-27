@@ -5119,7 +5119,7 @@ spdx-license-ids@^3.0.0:
 
 "spectrum2mpe@https://github.com/szk2s/spectrum2mpe":
   version "0.0.1"
-  resolved "https://github.com/szk2s/spectrum2mpe#1511a24213dc23980358acb4c75e7387d14f197f"
+  resolved "https://github.com/szk2s/spectrum2mpe#4a678aa4c3b1db962d9880329d78ad027526af1d"
   dependencies:
     chai "^4.2.0"
     glob "^7.1.3"
