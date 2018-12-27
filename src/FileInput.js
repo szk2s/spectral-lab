@@ -5,7 +5,7 @@ import { remote } from 'electron';
 const { dialog , getGlobal} = remote;
 const ProgressBar = getGlobal('ProgressBar');
 
-const FileInput = ({ addPartials, setSongInfo, songInfo, resetPlot}) => { 
+const FileInput = ({ setPartials, setSongInfo, songInfo }) => { 
 	const handleClick = async () => {
 		let paths = dialog.showOpenDialog({
 			properties: ['openFile', 'multiSelections', 'createDirectory'],
@@ -26,8 +26,7 @@ const FileInput = ({ addPartials, setSongInfo, songInfo, resetPlot}) => {
 				detail: 'Wait...'
 			});
 			const newPartials = await s2m.txtImport(paths[0]);
-			resetPlot();
-			addPartials(newPartials);
+			setPartials(newPartials);
 			setSongInfo({songName: path.basename( paths[0], '.txt'), inputFilePath: paths[0]});
 			console.log('Your file has been successfully imported!');
 			progressBar.setCompleted();
@@ -56,8 +55,8 @@ const FileInput = ({ addPartials, setSongInfo, songInfo, resetPlot}) => {
 	
 	return (
 		<div>
-			<button className="open" onClick={ handleClick }>Open</button>
 			<CurrentFileView />
+			<button className="open" onClick={ handleClick }>Open</button>
 		</div>
 	);
 };
