@@ -1,6 +1,6 @@
 const electron = require('electron');
 const app = electron.app;
-const globalShortcut = electron.globalShortcut
+const globalShortcut = electron.globalShortcut;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 global.ProgressBar = require('electron-progressbar');
@@ -14,8 +14,8 @@ function createWindow() {
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
 	globalShortcut.register('CommandOrControl+R', () => {
-		mainWindow.reload()
-	})
+		mainWindow.reload();
+	});
 	mainWindow.on('closed', () => mainWindow = null);
 }
 
