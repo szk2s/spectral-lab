@@ -66,7 +66,7 @@ class App extends React.Component {
 				const data = partials.map(partial => {
 					return {
 						type: 'scatter',
-						mode: 'markers',
+						mode: 'lines+markers',
 						x: partial.timecode,
 						y: partial.freqs,
 						line: {
@@ -74,7 +74,7 @@ class App extends React.Component {
 							reversescale: false
 						},
 						marker: {
-							size: 1,
+							size: 1.5,
 							color: partial.amps.map(amp => amp * 300)
 						}
 					};
@@ -95,7 +95,7 @@ class App extends React.Component {
 				const data = partials.map(partial => {
 					return {
 						type: 'scatter3d',
-						mode: 'markers',
+						mode: 'lines+markers',
 						x: partial.timecode,
 						y: partial.freqs,
 						z: partial.amps,
@@ -104,7 +104,7 @@ class App extends React.Component {
 							reversescale: false
 						},
 						marker: {
-							size: 1,
+							size: 1.5,
 							color: partial.amps.map(amp => amp * 200)
 						}
 					};
