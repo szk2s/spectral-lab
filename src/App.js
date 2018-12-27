@@ -38,6 +38,12 @@ class App extends React.Component {
 			});
 		};
 
+		this.resetPlot = () => {
+			this.setState({
+				plot: INITIAL_STATE.PLOT
+			});
+		};
+
 		this.mergeConfig = (newConfig) => {
 			this.setState({
 				config: _.merge(this.state.config, newConfig)
@@ -48,7 +54,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<FileInput addPartials={ this.addPartials } setSongInfo={ this.setSongInfo } songInfo={ this.state.songInfo } />
+				<FileInput addPartials={ this.addPartials } setSongInfo={ this.setSongInfo } songInfo={ this.state.songInfo } resetPlot={ this.resetPlot } />
 				<PlotButtons partials= {this.state.partials } setPlot={ this.setPlot } />
 				<Plot
 					data={ this.state.plot.data } layout={ this.state.plot.layout }
