@@ -131,24 +131,27 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<FileInput 
+					style={{flexGrow: 1}}
 					setPartials={ this.setPartials } 
 					setSongInfo={ this.setSongInfo } 
 					songInfo={ this.state.songInfo } 
 				/>
 				<StyleSelector 
+					style={{flexGrow: 1}}
 					partials={this.state.partials } 
 					plotStyle={this.state.plotStyle} 
 					setPlotStyle={ this.setPlotStyle } 
 				/>
-				<Plot
+				<Plot 
+					style={{flexGrow: 100}}
 					className='Plot'
 					data={ this.state.plotContent.data } 
 					layout={ this.state.plotContent.layout } 
 					config={ this.state.plotContent.config } 
 					useResizeHandler= { true } 
-					style={ { width: '100%', height: '800px' } } 
 				/>
 				<Export 
+					style={{flexGrow: 1}}
 					partials={this.state.partials } 
 					destination={ this.state.config.output.destination} 
 					mergeConfig={ this.mergeConfig } 

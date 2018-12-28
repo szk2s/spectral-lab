@@ -1,9 +1,24 @@
+html {
+  height: 98%;
+}
+
 body {
-  margin: 2% 4%;
   font-family: Helvetica;
   background-color: #333333;
   color:WhiteSmoke;
-  height: 1000px !important;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 a {
