@@ -3,6 +3,7 @@ body {
   font-family: Helvetica;
   background-color: #333333;
   color:WhiteSmoke;
+  height: 1000px !important;
 }
 
 a {

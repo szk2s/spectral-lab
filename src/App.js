@@ -146,7 +146,7 @@ class App extends React.Component {
 					layout={ this.state.plotContent.layout } 
 					config={ this.state.plotContent.config } 
 					useResizeHandler= { true } 
-					style={ { width: '100%', height: '100%' } } 
+					style={ { width: '100%', height: '00px' } } 
 				/>
 				<Export 
 					partials={this.state.partials } 
