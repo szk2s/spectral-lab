@@ -1,8 +1,6 @@
 # spectral-mpe-editor
 
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
-![mock](https://user-images.githubusercontent.com/31060964/50388623-9aafa280-075f-11e9-94ec-818233d36be4.gif)
+![mock_20181228](https://user-images.githubusercontent.com/31060964/50502309-a1ad1c80-0aa1-11e9-8884-f60d0bf6da1b.gif)
 
 > Electron app for generating and editing MIDI files which is compatible with MPE applications.
 
