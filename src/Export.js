@@ -19,7 +19,7 @@ const Export = ({ partials, destination, mergeConfig ,songInfo}) => {
 	
 	const exportSMFs = async (partials) => {
 		if ( !partials || partials.length < 1 ){
-			console.log('No partials to export');
+			dialog.showMessageBox({ type:'error', message: 'No partials to export' })
 			return;
 		}
 
@@ -37,7 +37,7 @@ const Export = ({ partials, destination, mergeConfig ,songInfo}) => {
 				destination, 
 				{
 					makeOutputFolder: true,
-					outputFolderName: moment(new Date()).format('YYMMDD')
+					outputFolderName: songInfo.songName + '_' + moment(new Date()).format('YYMMDD')
 				}
 			);
 		} else if (smfs.length === 1 ) {
