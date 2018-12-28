@@ -40,7 +40,10 @@
     "electron": "^4.0.0",
     "electron-builder": "^20.38.4",
     "electron-react-devtools": "^0.5.3",
-    "electron-rebuild": "^1.8.2"
+    "electron-rebuild": "^1.8.2",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.15.3"
   },
   "build": {
     "appId": "com.electron.spectral-mpe-editor",

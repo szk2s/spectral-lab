@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["prettier"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -15,6 +15,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "prettier/prettier": "error",
         "indent": [
             "error",
             "tab"
