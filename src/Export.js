@@ -19,8 +19,12 @@ const Export = ({ partials, destination, mergeConfig ,songInfo}) => {
 	
 	const exportSMFs = async (partials) => {
 		if ( !partials || partials.length < 1 ){
-			dialog.showMessageBox({ type:'error', message: 'No partials to export' })
+			dialog.showMessageBox({ type:'error', message: 'No partials to export' });
 			return;
+		}
+
+		if ( destination == '') {
+			dialog.showMessageBox({ type: 'error', message: 'Please select output path'});
 		}
 
 		const progressBar = new ProgressBar({

@@ -12,7 +12,7 @@ class App extends React.Component {
 
 		this.state = {
 			partials: [],
-			config: { output: {destination : './output'}},
+			config: { output: {destination : ''}},
 			songInfo: {songName: '', inputFilePath: ''},
 			plotStyle: 'none',
 			plotContent: {...INITIAL_STATE.PLOT}
