@@ -20,7 +20,7 @@ class StyleSelector extends React.Component {
 		return (
 			<div className="plotButtons">
 				<p>
-					Graph
+					Graph: 
 					<select value={ this.props.plotStyle } onChange={ this.handleChange }>
 						<option value="none">None</option>
 						<option value="2d">2D Graph</option>
