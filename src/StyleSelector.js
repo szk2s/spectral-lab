@@ -7,8 +7,9 @@ class StyleSelector extends React.Component {
 		super(props);
 
 		this.handleChange = (event) => {
-			if (this.props.partials.length == 0) {
-				dialog.showMessageBox({ type:'error', message: 'Open your file before making graph' });
+			const partials = this.props.partials;
+			if ( !partials || partials.length < 1 ){
+				dialog.showMessageBox({ type:'error', message: 'No partials to plot' })
 				return;
 			}
 			this.props.setPlotStyle( event.target.value );
