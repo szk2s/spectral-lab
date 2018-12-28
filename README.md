@@ -4,8 +4,6 @@
 
 > Electron app for generating and editing MIDI files which is compatible with MPE applications.
 
-TODO: Fill out this long description.
-
 ## Table of Contents
 
 - [spectral-mpe-editor](#spectral-mpe-editor)
