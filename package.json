@@ -1,7 +1,14 @@
 {
   "name": "spectral-mpe-editor",
+  "description": "Electron app for generating and editing MIDI files which is compatible with MPE applications",
+  "author": {
+    "name": "Satoshi Suzuki",
+    "email": "suzukisjss@gmail.com"
+  },
+  "repository": "https://github.com/szk2s/spectral-mpe-editor",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "electron-progressbar": "^1.1.0",
     "lodash": "^4.17.11",
@@ -14,7 +21,10 @@
   },
   "main": "public/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "rebuild": "./node_modules/.bin/electron-rebuild"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +38,15 @@
     "@babel/register": "^7.0.0",
     "babel-core": "^6.26.3",
     "electron": "^4.0.0",
-    "electron-react-devtools": "^0.5.3"
-  }
+    "electron-builder": "^20.38.4",
+    "electron-react-devtools": "^0.5.3",
+    "electron-rebuild": "^1.8.2"
+  },
+  "build": {
+    "appId": "com.electron.spectral-mpe-editor",
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  },
+  "postinstall": "electron-builder install-app-deps"
 }
