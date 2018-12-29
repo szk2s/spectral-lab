@@ -38,7 +38,7 @@ Execute the following from the Console tab of your running Electron app's develo
 ```
 require('electron-react-devtools').install()
 ```
-And than refresh or restart the renderer process, you can see a React tab added.
+And than refresh with `cmd + r`, you can see a React tab added.
 
 ## References
 [What's MPE?](http://mpe.js.org/ "mpe.js")  
