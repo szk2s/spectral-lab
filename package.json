@@ -21,10 +21,11 @@
   },
   "main": "public/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "webpack --mode development --watch & electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "rebuild": "./node_modules/.bin/electron-rebuild"
+    "rebuild": "./node_modules/.bin/electron-rebuild",
+    "build": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,15 +36,17 @@
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
     "electron": "^4.0.0",
     "electron-builder": "^20.38.4",
     "electron-react-devtools": "^0.5.3",
     "electron-rebuild": "^1.8.2",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
   },
   "build": {
     "appId": "com.electron.spectral-mpe-editor",
