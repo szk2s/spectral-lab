@@ -38,7 +38,12 @@ Execute the following from the Console tab of your running Electron app's develo
 ```
 require('electron-react-devtools').install()
 ```
-And than refresh with `cmd + r`, you can see a React tab added.
+And than refresh with `cmd + r`, you can see a React tab added.  
+  
+You can run both ESLint and Prettier with one command.  
+```
+npm run lint
+```  
 
 ## References
 [What's MPE?](http://mpe.js.org/ "mpe.js")  
