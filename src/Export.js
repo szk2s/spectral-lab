@@ -29,11 +29,12 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
       return;
     }
 
-    if (destination == '') {
+    if (!destination) {
       dialog.showMessageBox({
         type: 'error',
         message: 'Please select output path'
       });
+      return;
     }
 
     const progressBar = new ProgressBar({
@@ -59,14 +60,33 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
     dialog.showMessageBox({ message: 'Export Completed!' });
   };
 
+  const OutputPathView = () => {
+    if (!destination) {
+      return (
+        <div>
+          <p>Path</p>
+          <p className="path-display">
+            <a onClick={changeDestination}>Please Select Output Path</a>
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <p>Path</p>
+          <p className="path-display">
+            {path.resolve(destination)}
+            <button onClick={changeDestination}>Change</button>
+          </p>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="export">
       <h3>Export</h3>
-      <p>Path</p>
-      <p className="path-display">
-        {path.resolve(destination)}
-        <button onClick={changeDestination}>Change</button>
-      </p>
+      <OutputPathView />
       <button
         onClick={() => {
           exportSMFs(partials);
