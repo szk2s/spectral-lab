@@ -27,7 +27,7 @@
     "dist": "electron-builder",
     "rebuild": "./node_modules/.bin/electron-rebuild",
     "build": "webpack --mode production",
-    "lint": "./node_modules/.bin/eslint ./src/**.js --fix"
+    "lint": "eslint ./src/**.js --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
