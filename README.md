@@ -22,6 +22,9 @@
 ## Install
 
 git clone or download zip 
+```
+git clone https://github.com/szk2s/spectral-mpe-editor
+```
 
 Then install dependencies
 ```
@@ -55,6 +58,8 @@ npm run lint
 ```  
 
 ## Application Distribution
+If you have not install dependencies yet, run `npm i` first.
+
 You can package your code and build app with following command.
 ```
 npm run build
