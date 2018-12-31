@@ -25,8 +25,7 @@
     "start": "webpack --mode development --watch & electron .",
     "prebuild": "node mergeDependencies.js && cp -R public app && webpack --mode production",
     "build": "electron-builder install-app-deps && electron-builder",
-    "lint": "eslint ./src/**.js --fix",
-    "postinstall": "electron-builder install-app-deps"
+    "lint": "eslint ./src/**.js --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
