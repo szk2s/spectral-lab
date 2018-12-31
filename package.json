@@ -14,6 +14,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
     "plotly.js": "^1.43.1",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-plotly.js": "^2.2.0",
@@ -25,10 +26,8 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "rebuild": "./node_modules/.bin/electron-rebuild",
-    "build": "webpack --mode production"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "build": "webpack --mode production",
+    "lint": "eslint ./src/**.js --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -37,14 +36,17 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "electron": "^4.0.0",
     "electron-builder": "^20.38.4",
     "electron-react-devtools": "^0.5.3",
     "electron-rebuild": "^1.8.2",
+    "eslint": "^5.11.1",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.15.3",
+    "eslint-plugin-react": "^7.12.0",
+    "prettier": "1.15.3",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"
   },
