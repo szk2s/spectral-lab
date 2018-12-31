@@ -11,6 +11,9 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Development](#development)
+    - [Install electron-react-devtools.](#install-electron-react-devtools)
+    - [Linting](#linting)
+  - [Application Distribution](#application-distribution)
   - [References](#references)
   - [Maintainers](#maintainers)
   - [Contributing](#contributing)
@@ -32,7 +35,12 @@ npm start
 ```
 
 ## Development  
-Then install electron-react-devtools.  
+
+**Note**  
+*Please refresh your app with `cmd + r` after launching electron with `npm start`.   
+If you don't refresh, you will see the previous version.*
+
+### Install electron-react-devtools.  
 Execute the following from the Console tab of your running Electron app's developer tools:  
 
 ```
@@ -40,10 +48,18 @@ require('electron-react-devtools').install()
 ```
 And than refresh with `cmd + r`, you can see a React tab added.  
   
+### Linting
 You can run both ESLint and Prettier with one command.  
 ```
 npm run lint
 ```  
+
+## Application Distribution
+You can package your code and build app with following command.
+```
+npm run build
+```  
+It may take 2 or 3 minuites. Please be patient.  
 
 ## References
 [What's MPE?](http://mpe.js.org/ "mpe.js")  

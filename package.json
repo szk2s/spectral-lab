@@ -23,11 +23,10 @@
   "main": "public/main.js",
   "scripts": {
     "start": "webpack --mode development --watch & electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "rebuild": "./node_modules/.bin/electron-rebuild",
-    "build": "webpack --mode production",
-    "lint": "eslint ./src/**.js --fix"
+    "prebuild": "node mergeDependencies.js && cp -R public app && webpack --mode production",
+    "build": "electron-builder install-app-deps && electron-builder",
+    "lint": "eslint ./src/**.js --fix",
+    "postinstall": "electron-builder install-app-deps"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -53,8 +52,12 @@
   "build": {
     "appId": "com.electron.spectral-mpe-editor",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "public.app-category.music",
+      "target": "dmg"
+    },
+    "directories": {
+      "buildResources": "app/buildResources"
     }
   },
-  "postinstall": "electron-builder install-app-deps"
+  "postinstall": "node mergeDependencies.js && electron-builder install-app-deps"
 }
