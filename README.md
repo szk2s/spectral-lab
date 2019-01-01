@@ -10,6 +10,7 @@
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
+    - [Try](#try)
   - [Development](#development)
     - [Install electron-react-devtools.](#install-electron-react-devtools)
     - [Linting](#linting)
@@ -33,9 +34,15 @@ npm i
 
 ## Usage
 
+You can launch the app with command
+
 ```
 npm start
 ```
+
+### Try  
+
+Examples of text file exported by Spear is available at `test/assets`  
 
 ## Development  
 
@@ -58,7 +65,7 @@ npm run lint
 ```  
 
 ## Application Distribution
-If you have not install dependencies yet, run `npm i` first.
+If you have not installed dependencies yet, run `npm i` first.
 
 You can package your code and build app with following command.
 ```
