@@ -57,6 +57,5 @@
     "directories": {
       "buildResources": "app/buildResources"
     }
-  },
-  "postinstall": "node mergeDependencies.js && electron-builder install-app-deps"
+  }
 }
