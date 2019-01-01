@@ -30,27 +30,27 @@ class App extends React.Component {
       }
     };
 
-    this.setSongInfo = (_songInfo) => {
+    this.setSongInfo = (songInfo) => {
       this.setState({
-        songInfo: _songInfo
+        songInfo
       });
     };
 
-    this.setPartials = (newPartials) => {
+    this.setPartials = (partials) => {
       this.setState({
-        partials: newPartials
+        partials
       });
     };
 
-    this.setPlotStyle = (newStyle) => {
+    this.setPlotStyle = (plotStyle) => {
       this.setState({
-        plotStyle: newStyle
+        plotStyle
       });
     };
 
-    this.setPlotContent = (newContent) => {
+    this.setPlotContent = (plotContent) => {
       this.setState({
-        plotContent: newContent
+        plotContent
       });
     };
 

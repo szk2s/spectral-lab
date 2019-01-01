@@ -22,50 +22,48 @@ const FileInput = ({ setPartials, setSongInfo, songInfo }) => {
       ]
     });
 
-    if (paths) {
-      if (paths.length !== 1) {
-        dialog.showMessageBox({
-          type: 'error',
-          message: 'Please select only one file'
-        });
-        paths = undefined;
-        return handleClick();
-      }
-      const progressBar = new ProgressBar({
-        text: 'Converting file...',
-        detail: 'Wait...'
-      });
-      const newPartials = await s2m.txtImport(paths[0]);
-      setPartials(newPartials);
-      setSongInfo({
-        songName: path.basename(paths[0], '.txt'),
-        inputFilePath: paths[0]
-      });
-      // console.log('Your file has been successfully imported!');
-      progressBar.setCompleted();
-    } else {
+    if (paths == null) {
+      // User canceled opening file
       return;
     }
+    if (paths.length !== 1) {
+      dialog.showMessageBox({
+        type: 'error',
+        message: 'Please select only one file'
+      });
+      paths = null;
+      return handleClick();
+    }
+    const progressBar = new ProgressBar({
+      text: 'Converting file...',
+      detail: 'Wait...'
+    });
+    const newPartials = await s2m.txtImport(paths[0]);
+    setPartials(newPartials);
+    setSongInfo({
+      songName: path.basename(paths[0], '.txt'),
+      inputFilePath: paths[0]
+    });
+    progressBar.setCompleted();
   };
 
   const CurrentFileView = () => {
-    if (!songInfo.songName) {
+    if (songInfo.songName == '') {
       return (
         <p>
           <a onClick={handleClick}>Open your file</a>
         </p>
       );
-    } else {
-      return (
-        <div>
-          <p>Current File</p>
-          <p className="song-name">{songInfo.songName}</p>
-          <p className="inputDirName">
-            {'( ' + path.dirname(songInfo.inputFilePath) + ' )'}
-          </p>
-        </div>
-      );
     }
+    return (
+      <div>
+        <p>Current File</p>
+        <p className="song-name">{songInfo.songName}</p>
+        <p className="inputDirName">
+          {'( ' + path.dirname(songInfo.inputFilePath) + ' )'}
+        </p>
+      </div>
+    );
   };
 
   return (

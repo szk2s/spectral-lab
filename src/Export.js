@@ -9,7 +9,7 @@ const ProgressBar = getGlobal('ProgressBar');
 
 const Export = ({ partials, destination, mergeConfig, songInfo }) => {
   const changeDestination = () => {
-    let paths = dialog.showOpenDialog({
+    const paths = dialog.showOpenDialog({
       properties: ['openDirectory', 'createDirectory']
     });
 
@@ -20,7 +20,7 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
     }
   };
 
-  const exportSMFs = async (partials) => {
+  const exportSMFs = async () => {
     if (!partials || partials.length < 1) {
       dialog.showMessageBox({
         type: 'error',
@@ -70,30 +70,24 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
           </p>
         </div>
       );
-    } else {
-      return (
-        <div>
-          <p>Path</p>
-          <p className="path-display">
-            {path.resolve(destination)}
-            <button onClick={changeDestination}>Change</button>
-          </p>
-        </div>
-      );
     }
+
+    return (
+      <div>
+        <p>Path</p>
+        <p className="path-display">
+          {path.resolve(destination)}
+          <button onClick={changeDestination}>Change</button>
+        </p>
+      </div>
+    );
   };
 
   return (
     <div className="export">
       <h3>Export</h3>
       <OutputPathView />
-      <button
-        onClick={() => {
-          exportSMFs(partials);
-        }}
-      >
-        Export
-      </button>
+      <button onClick={exportSMFs}>Export</button>
     </div>
   );
 };
