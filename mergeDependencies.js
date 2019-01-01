@@ -4,7 +4,7 @@ const _ = require('lodash');
 
 const rootPackageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const appPackageJson = JSON.parse(fs.readFileSync('./app/package.json', 'utf8'));
-const newDependencies = _.merge(rootPackageJson.dependencies, appPackageJson.dependencies);
+const newDependencies = _.merge(appPackageJson.dependencies, rootPackageJson.dependencies);
 appPackageJson.dependencies = newDependencies;
 
 fs.writeFile(
