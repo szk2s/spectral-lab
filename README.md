@@ -2,7 +2,8 @@
 
 ![mock_20181228](https://user-images.githubusercontent.com/31060964/50502309-a1ad1c80-0aa1-11e9-8884-f60d0bf6da1b.gif)
 
-> Electron app for generating and editing MIDI files which is compatible with MPE applications.
+> Electron app for generating and editing MIDI files which is compatible with MPE applications.  
+> ***Listen to the demo sounds [here](https://drive.google.com/drive/folders/1xU2hxmzMhu4SbaaS6ggDsQUYxpIQMYT8?usp=sharing)!!***
 
 ## Table of Contents
 
@@ -34,7 +35,7 @@ npm i
 
 ## Usage
 
-You can launch the app with command
+Launch Electron with following command.
 
 ```
 npm start
@@ -42,7 +43,10 @@ npm start
 
 ### Try  
 
-Examples of text file exported by Spear is available at `test/assets`  
+You can import text file exported by 
+[Spear](http://www.klingbeil.com/spear/ "Spear").  
+Example files are available at `./test/assets`    
+Importing from [Matlab](https://github.com/szk2s/Spectral-Analysis "Matlab") and any other analysis tool is currently under development.
 
 ## Development  
 
