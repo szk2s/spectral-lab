@@ -59,9 +59,7 @@ const FileInput = ({ setPartials, setSongInfo, songInfo }) => {
       <div>
         <p>Current File</p>
         <p className="song-name">{songInfo.songName}</p>
-        <p className="inputDirName">
-          {'( ' + path.dirname(songInfo.inputFilePath) + ' )'}
-        </p>
+        <p className="inputDirName">{'( ' + path.dirname(songInfo.inputFilePath) + ' )'}</p>
       </div>
     );
   };

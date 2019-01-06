@@ -47,8 +47,7 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
     if (smfs.length > 1) {
       await s2m.smfsBatchExport(smfs, songInfo.songName, destination, {
         makeOutputFolder: true,
-        outputFolderName:
-          songInfo.songName + '_' + moment(new Date()).format('YYMMDD')
+        outputFolderName: songInfo.songName + '_' + moment(new Date()).format('YYMMDD')
       });
     } else if (smfs.length === 1) {
       await s2m.smfsBatchExport(smfs, songInfo.songName, destination, {
