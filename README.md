@@ -11,6 +11,7 @@
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
+    - [Try](#try)
   - [Development](#development)
     - [Install electron-react-devtools.](#install-electron-react-devtools)
     - [Linting](#linting)
@@ -40,8 +41,11 @@ Launch Electron with following command.
 npm start
 ```
 
+### Try  
+
 You can import text file exported by 
 [Spear](http://www.klingbeil.com/spear/ "Spear").  
+Example files are available at `./test/assets`    
 Importing from [Matlab](https://github.com/szk2s/Spectral-Analysis "Matlab") and any other analysis tool is currently under development.
 
 ## Development  
@@ -65,7 +69,7 @@ npm run lint
 ```  
 
 ## Application Distribution
-If you have not install dependencies yet, run `npm i` first.
+If you have not installed dependencies yet, run `npm i` first.
 
 You can package your code and build app with following command.
 ```
