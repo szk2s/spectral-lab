@@ -19,9 +19,7 @@ class App extends React.Component {
     };
 
     this.componentDidUpdate = (_, prevState) => {
-      if (
-        this.state.songInfo.inputFilePath !== prevState.songInfo.inputFilePath
-      ) {
+      if (this.state.songInfo.inputFilePath !== prevState.songInfo.inputFilePath) {
         this.setPlotStyle('none');
       }
 
@@ -145,12 +143,7 @@ class App extends React.Component {
           setSongInfo={this.setSongInfo}
           songInfo={songInfo}
         />
-        <StyleSelector
-          style={{ flex: 1 }}
-          partials={partials}
-          plotStyle={plotStyle}
-          setPlotStyle={this.setPlotStyle}
-        />
+        <StyleSelector style={{ flex: 1 }} partials={partials} plotStyle={plotStyle} setPlotStyle={this.setPlotStyle} />
         <Plot
           style={{ flex: 100 }}
           className="Plot"
