@@ -43,7 +43,7 @@ const Export = ({ partials, destination, mergeConfig, songInfo }) => {
     });
 
     const melodies = await s2m.partials2melodies(partials);
-    const smfs = await s2m.genSMFs(melodies, 'test-song');
+    const smfs = await s2m.genSMFs(melodies, songInfo.songName);
     if (smfs.length > 1) {
       await s2m.smfsBatchExport(smfs, songInfo.songName, destination, {
         makeOutputFolder: true,
