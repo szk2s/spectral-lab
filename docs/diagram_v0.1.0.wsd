@@ -21,6 +21,7 @@ end box
 
 participant Disk
 
+== Open File ==
 User --> FileInput: Click
 FileInput --> User: Open Dialog
 User --> FileInput: Select File
@@ -34,6 +35,7 @@ setState({
 })
 end note
 
+== Plot ==
 User --> StyleSelector: Select Plot Style
 StyleSelector -> App: plotStyle
 rnote over App
@@ -49,6 +51,8 @@ setState({ plotContent })
 end note
 Plot -> App: Fetch plotContent
 Plot --> User: Show Graph
+
+== Export ==
 User --> Export: Click Change Button
 Export --> User: Open Dialog
 User --> Export: Select output folder
