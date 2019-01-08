@@ -29,27 +29,19 @@ class App extends React.Component {
     };
 
     this.setSongInfo = (songInfo) => {
-      this.setState({
-        songInfo
-      });
+      this.setState({ songInfo });
     };
 
     this.setPartials = (partials) => {
-      this.setState({
-        partials
-      });
+      this.setState({ partials });
     };
 
     this.setPlotStyle = (plotStyle) => {
-      this.setState({
-        plotStyle
-      });
+      this.setState({ plotStyle });
     };
 
     this.setPlotContent = (plotContent) => {
-      this.setState({
-        plotContent
-      });
+      this.setState({ plotContent });
     };
 
     this.mergeConfig = (newConfig) => {
