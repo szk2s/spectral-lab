@@ -1,0 +1,90 @@
+
+@startuml
+Title Spectral MPE Editor V0.2.0
+
+skinparam ParticipantPadding 18
+skinparam BoxPadding 18
+skinparam SequenceTitleFontSize 24
+skinparam SequenceBoxFontSize 24
+skinparam SequenceBoxFontStyle italic
+actor "User" #WhiteSmoke
+
+box "Electron" #Ivory
+participant S2M #LightCyan
+participant App #LemonChiffon
+participant FileInput #LemonChiffon
+participant StyleSelector #LemonChiffon
+participant Plot #LemonChiffon
+participant Export #LemonChiffon
+participant Render #LemonChiffon
+end box
+
+box "Max" #Seashell
+participant "poly~" #MistyRose
+participant "vst~" #MistyRose
+participant "Buffer" #MistyRose
+end box
+
+box "M4L Device" #Honeydew
+participant "Audio to Mixer" #LightGreen
+participant "Midi Input" #LightGreen
+participant "Edit Button" #LightGreen
+end box
+
+participant Disk
+
+
+== Open File ==
+User --> FileInput: Click
+FileInput --> User: Open Dialog
+User --> FileInput: Select File
+FileInput -> S2M: Call txtImport(path)
+S2M -> S2M: parseText()
+S2M -> FileInput: partials
+FileInput -> App: partials, songInfo
+rnote over App
+setState({
+  partials, songInfo
+})
+end note
+
+== Plot ==
+User --> StyleSelector: Select Plot Style
+StyleSelector -> App: plotStyle
+rnote over App
+setState({ plotStyle })
+end note
+hnote over App
+componentDidUpdate(){
+  updateGraph();
+}
+end note
+rnote over App
+setState({ plotContent })
+end note
+Plot -> App: Fetch plotContent
+Plot --> User: Show Graph
+
+== Export ==
+User --> Export: Click Change Button
+Export --> User: Open Dialog to ask the output path
+User --> Export: Select output folder
+Export -> App: path
+rnote over App
+setState({ config.destination })
+end note
+Export -> App: Fetch config.destination
+Export --> User: Show Output Path
+User --> Export: Click Export Button
+Export -> App: Fetch partials
+Export -> S2M: Call partials2melodies(partials)
+S2M -> Export: melodies
+Export -> S2M: call genSMFs(melodies, songInfo.songName)
+S2M -> Export: smfs
+Export -> S2M: call smfsBatchExport(smfs, songInfo.songName, destination)
+S2M -> Disk: Standard MIDI File
+
+== Render ==
+
+
+@enduml
