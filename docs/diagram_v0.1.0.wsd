@@ -54,7 +54,7 @@ Plot --> User: Show Graph
 
 == Export ==
 User --> Export: Click Change Button
-Export --> User: Open Dialog
+Export --> User: Open dialog to ask the output path
 User --> Export: Select output folder
 Export -> App: path
 rnote over App
