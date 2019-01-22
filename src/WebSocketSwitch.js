@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import openSocket from 'socket.io-client';
 
-class SocketSwitch extends React.Component {
+class WebSocketSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ class SocketSwitch extends React.Component {
     return (
       <div className="SocketSwitch">
         <p>
-          Socket:
+          WebSocket:
           <select onChange={this.handleChangeOnOff}>
             <option value="off">Off</option>
             <option value="on">On</option>
@@ -50,11 +50,11 @@ class SocketSwitch extends React.Component {
   }
 }
 
-SocketSwitch.propTypes = {
+WebSocketSwitch.propTypes = {
   setPlotStyle: PropTypes.func.isRequired,
   setPlotContent: PropTypes.func.isRequired,
   setPartials: PropTypes.func.isRequired,
   updateGraph: PropTypes.func.isRequired
 };
 
-export default SocketSwitch;
+export default WebSocketSwitch;

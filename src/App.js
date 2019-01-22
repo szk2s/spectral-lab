@@ -4,7 +4,7 @@ import _ from 'lodash';
 import FileInput from './FileInput';
 import StyleSelector from './StyleSelector';
 import Export from './Export';
-import SocketSwitch from './SocketSwitch';
+import WebSocketSwitch from './WebSocketSwitch';
 import INITIAL_STATE from '../constants/INITIAL_STATE';
 
 class App extends React.Component {
@@ -152,7 +152,7 @@ class App extends React.Component {
           mergeConfig={this.mergeConfig}
           songInfo={songInfo}
         />
-        <SocketSwitch
+        <WebSocketSwitch
           style={{ flex: 1 }}
           setPartials={this.setPartials}
           setPlotStyle={this.setPlotStyle}
