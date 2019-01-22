@@ -4,6 +4,7 @@ import _ from 'lodash';
 import FileInput from './FileInput';
 import StyleSelector from './StyleSelector';
 import Export from './Export';
+import WebSocketSwitch from './WebSocketSwitch';
 import INITIAL_STATE from '../constants/INITIAL_STATE';
 
 class App extends React.Component {
@@ -150,6 +151,13 @@ class App extends React.Component {
           destination={config.output.destination}
           mergeConfig={this.mergeConfig}
           songInfo={songInfo}
+        />
+        <WebSocketSwitch
+          style={{ flex: 1 }}
+          setPartials={this.setPartials}
+          setPlotStyle={this.setPlotStyle}
+          setPlotContent={this.setPlotContent}
+          updateGraph={this.updateGraph}
         />
       </div>
     );
