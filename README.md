@@ -1,4 +1,4 @@
-# spectral-mpe-editor
+# spectral-lab
 
 ![mock_20181228](https://user-images.githubusercontent.com/31060964/50502309-a1ad1c80-0aa1-11e9-8884-f60d0bf6da1b.gif)
 
@@ -7,7 +7,7 @@
 
 ## Table of Contents
 
-- [spectral-mpe-editor](#spectral-mpe-editor)
+- [spectral-lab](#spectral-lab)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
@@ -25,7 +25,7 @@
 
 git clone or download zip 
 ```
-git clone https://github.com/szk2s/spectral-mpe-editor
+git clone https://github.com/szk2s/spectral-lab
 ```
 
 Then install dependencies
