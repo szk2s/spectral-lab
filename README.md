@@ -1,4 +1,5 @@
 # spectral-mpe-editor
+### This repository is now deprecated. It has been moved to https://github.com/spectral-lab/spectral-lab
 
 ![mock_20181228](https://user-images.githubusercontent.com/31060964/50502309-a1ad1c80-0aa1-11e9-8884-f60d0bf6da1b.gif)
 
